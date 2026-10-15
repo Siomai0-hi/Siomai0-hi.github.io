@@ -1,11 +1,11 @@
-name: Publish Lab 6 Gallery
+name: Publish website to GitHub Pages
 
 on:
   push:
     branches:
-      - lab6
+      - main
     paths:
-      - lab6/**
+      - '**'
       - .github/workflows/lab6-pages.yml
   workflow_dispatch:
 
@@ -31,10 +31,10 @@ jobs:
         uses: actions/configure-pages@v5
         with:
           enablement: true
-      - name: Upload gallery site
+      - name: Upload website
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./lab6
+          path: .
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
