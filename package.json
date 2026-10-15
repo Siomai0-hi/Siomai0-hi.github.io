@@ -1,0 +1,13 @@
+{
+  "name": "web-zohiomj-labs",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "npm run build:lab7",
+    "build:lab7": "sass lab7/scss/main.scss lab7/style.css --style=compressed --no-source-map",
+    "watch:lab7": "sass --watch lab7/scss/main.scss:lab7/style.css"
+  },
+  "devDependencies": {
+    "sass": "^1.80.0"
+  }
+}

@@ -1,0 +1,13 @@
+@use "functions";
+
+.u-text-muted {
+  color: var(--muted);
+}
+
+.u-radius-card {
+  border-radius: var(--radius-card);
+}
+
+.u-space-section {
+  padding-block: functions.rem(54px);
+}

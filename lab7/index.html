@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="mn" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Даваажаргалын хоолны зураг, жорын санаа болон амтны тэмдэглэл.">
+  <meta name="theme-color" content="#f5f4ed">
+  <title>Агшнууд | Лаборатори 7 | SCSS цомог</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="page-loader" id="page-loader" role="status" aria-label="Хуудас ачаалж байна">
+    <span class="loader-spinner" aria-hidden="true"></span>
+    <span class="visually-hidden">Зургийн цомог ачаалж байна</span>
+  </div>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Агшнууд, нүүр хуудас">
+      <svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true" focusable="false">
+        <path d="M18 3.5 32.5 29H3.5L18 3.5Z" fill="none" stroke="currentColor" stroke-width="2"/>
+        <circle cx="18" cy="21" r="4.5" fill="currentColor"/>
+        <path d="M7 29h22" stroke="currentColor" stroke-width="2"/>
+      </svg>
+      <span>АГШНУУД<span class="brand-dot">.</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Үндсэн цэс">
+      <a href="#gallery">Цомог</a>
+      <a href="#film">Бичлэг</a>
+      <a href="../Lab5.html">Лаб 5</a>
+    </nav>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Бараан горим асаах" aria-pressed="false" title="Өнгөний горим солих">
+      <svg class="theme-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/>
+        <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"/>
+      </svg>
+    </button>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="eyebrow">ЗУРГИЙН ТЭМДЭГЛЭЛ · УЛААНБААТАР</p>
+      <h1 id="hero-title">Өдөр бүрт үлдэх <em>нэг агшин.</em></h1>
+      <p class="hero-copy">Аялал, байгаль, хотын хэмнэл дундаас олж харсан жижигхэн түүхүүд.</p>
+      <a class="hero-link" href="#gallery">Цомгийг үзэх <span aria-hidden="true">↓</span></a>
+      <div class="hero-stamp" aria-hidden="true">
+        <svg viewBox="0 0 120 120" focusable="false">
+          <defs><path id="stamp-circle" d="M60,60 m-43,0 a43,43 0 1,1 86,0 a43,43 0 1,1 -86,0"/></defs>
+          <text><textPath href="#stamp-circle">MOMENTS · MEMORIES · MOMENTS · </textPath></text>
+          <path d="m60 35 5 18 18 7-18 6-5 19-6-19-18-6 18-7 6-18Z" fill="currentColor"/>
+        </svg>
+      </div>
+    </section>
+
+    <section class="gallery-section" id="gallery" aria-labelledby="gallery-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">СОНГОСОН АГШНУУД</p>
+          <h2 id="gallery-title">Зургийн цомог</h2>
+        </div>
+        <p class="section-note">Карт бүрийн товчийг дарж арын түүхийг үзээрэй.</p>
+      </div>
+
+      <div class="gallery gallery-grid">
+        <article class="gallery__card flip-card" style="--i: 0">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <img src="img/photo1.jpg" alt="Шинэ ногооны өнгөлөг салат" width="900" height="900" fetchpriority="high">
+              <div class="photo-caption"><span>01 / САЛАТ</span><h3>Шинэхэн амт</h3></div>
+              <button class="flip-toggle" type="button" aria-label="Шинэхэн амт хоолны түүхийг үзэх" aria-pressed="false" title="Хоолны түүх үзэх">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14m-7-7h14" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"/></svg>
+              </button>
+            </div>
+            <div class="card-face card-back" aria-hidden="true" inert>
+              <span class="card-index">01 / САЛАТ</span><h3>Шинэхэн амт</h3>
+              <p>Өнгөлөг ногоо, зөөлөн амтлагч хоёр энгийн өдрийн хоолыг шинэхэн эхлэл болгоно.</p>
+              <p class="photo-meta"><span>Огноо <strong>2026.06.12</strong></span><span>Газар <strong>Улаанбаатар</strong></span></p>
+              <button class="flip-toggle flip-back" type="button" aria-label="Шинэхэн амтыг буцааж харах" aria-pressed="false" title="Зураг руу буцах" tabindex="-1">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5m7-7-7 7 7 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="gallery__card flip-card" style="--i: 1">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <img src="img/photo2.jpg" alt="Зуухнаас дөнгөж гарсан пицца" width="900" height="1087" loading="lazy">
+              <div class="photo-caption"><span>02 / ПИЦЦА</span><h3>Зуухны халуун</h3></div>
+              <button class="flip-toggle" type="button" aria-label="Зуухны халуун хоолны түүхийг үзэх" aria-pressed="false" title="Хоолны түүх үзэх">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14m-7-7h14" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"/></svg>
+              </button>
+            </div>
+            <div class="card-face card-back" aria-hidden="true" inert>
+              <span class="card-index">02 / ПИЦЦА</span><h3>Зуухны халуун</h3>
+              <p>Зуухнаас гарсан пиццаны үнэр гал тогооны яриа, инээдийг нэг дор цуглуулна.</p>
+              <p class="photo-meta"><span>Огноо <strong>2026.06.18</strong></span><span>Газар <strong>Тэрэлж</strong></span></p>
+              <button class="flip-toggle flip-back" type="button" aria-label="Зуухны халууныг буцааж харах" aria-pressed="false" title="Зураг руу буцах" tabindex="-1">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5m7-7-7 7 7 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="gallery__card flip-card" style="--i: 2">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <img src="img/photo3.jpg" alt="Өргөн тавагласан гоймонгийн хоол" width="900" height="561" loading="lazy">
+              <div class="photo-caption"><span>03 / ГОЙМОН</span><h3>Тавагны хэмнэл</h3></div>
+              <button class="flip-toggle" type="button" aria-label="Тавагны хэмнэл хоолны түүхийг үзэх" aria-pressed="false" title="Хоолны түүх үзэх">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14m-7-7h14" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"/></svg>
+              </button>
+            </div>
+            <div class="card-face card-back" aria-hidden="true" inert>
+              <span class="card-index">03 / ГОЙМОН</span><h3>Тавагны хэмнэл</h3>
+              <p>Өнгө, бүтэц, амтыг нэг тавагт тэнцвэржүүлэх нь тогоочийн чимээгүй зохиомж юм.</p>
+              <p class="photo-meta"><span>Огноо <strong>2026.07.02</strong></span><span>Газар <strong>Улаанбаатар</strong></span></p>
+              <button class="flip-toggle flip-back" type="button" aria-label="Тавагны хэмнэлийг буцааж харах" aria-pressed="false" title="Зураг руу буцах" tabindex="-1">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5m7-7-7 7 7 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="gallery__card flip-card" style="--i: 3">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <img src="img/photo4.jpg" alt="Зөөлөн кремтэй шинэхэн бялуу" width="900" height="1125" loading="lazy">
+              <div class="photo-caption"><span>04 / БЯЛУУ</span><h3>Амттай эхлэл</h3></div>
+              <button class="flip-toggle" type="button" aria-label="Амттай эхлэл хоолны түүхийг үзэх" aria-pressed="false" title="Хоолны түүх үзэх">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14m-7-7h14" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"/></svg>
+              </button>
+            </div>
+            <div class="card-face card-back" aria-hidden="true" inert>
+              <span class="card-index">04 / БЯЛУУ</span><h3>Амттай эхлэл</h3>
+              <p>Зөөлөн крем, жимсний өнгө хоёр өглөөг баяртай эхлүүлэх жижигхэн шалтгаан болно.</p>
+              <p class="photo-meta"><span>Огноо <strong>2026.07.14</strong></span><span>Газар <strong>Хөвсгөл</strong></span></p>
+              <button class="flip-toggle flip-back" type="button" aria-label="Амттай эхлэлийг буцааж харах" aria-pressed="false" title="Зураг руу буцах" tabindex="-1">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5m7-7-7 7 7 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="gallery__card flip-card" style="--i: 4">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <img src="img/photo5.jpg" alt="Шинэ ногоо, үртэй эрүүл хоол" width="900" height="600" loading="lazy">
+              <div class="photo-caption"><span>05 / ЭРҮҮЛ ХООЛ</span><h3>Өнгөний тэнцвэр</h3></div>
+              <button class="flip-toggle" type="button" aria-label="Өнгөний тэнцвэр хоолны түүхийг үзэх" aria-pressed="false" title="Хоолны түүх үзэх">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14m-7-7h14" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"/></svg>
+              </button>
+            </div>
+            <div class="card-face card-back" aria-hidden="true" inert>
+              <span class="card-index">05 / ЭРҮҮЛ ХООЛ</span><h3>Өнгөний тэнцвэр</h3>
+              <p>Шинэ ногоо, үр, амтлагчийн хослол өдөр тутмын хоолыг хөнгөн бөгөөд сонирхолтой болгоно.</p>
+              <p class="photo-meta"><span>Огноо <strong>2026.08.03</strong></span><span>Газар <strong>Дорнодын эрэг</strong></span></p>
+              <button class="flip-toggle flip-back" type="button" aria-label="Өнгөний тэнцвэрийг буцааж харах" aria-pressed="false" title="Зураг руу буцах" tabindex="-1">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5m7-7-7 7 7 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="gallery__card flip-card" style="--i: 5">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <img src="img/photo6.jpg" alt="Ширээн дээр бэлтгэсэн оройн хоол" width="900" height="600" loading="lazy">
+              <div class="photo-caption"><span>06 / ОРОЙН ХООЛ</span><h3>Ширээний яриа</h3></div>
+              <button class="flip-toggle" type="button" aria-label="Ширээний яриа хоолны түүхийг үзэх" aria-pressed="false" title="Хоолны түүх үзэх">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14m-7-7h14" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"/></svg>
+              </button>
+            </div>
+            <div class="card-face card-back" aria-hidden="true" inert>
+              <span class="card-index">06 / ОРОЙН ХООЛ</span><h3>Ширээний яриа</h3>
+              <p>Нэг ширээний эргэн тойронд хуваалцсан хоол хамгийн энгийн үдшийг дурсамж болгодог.</p>
+              <p class="photo-meta"><span>Огноо <strong>2026.08.21</strong></span><span>Газар <strong>Богд хан уул</strong></span></p>
+              <button class="flip-toggle flip-back" type="button" aria-label="Ширээний яриаг буцааж харах" aria-pressed="false" title="Зураг руу буцах" tabindex="-1">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5m7-7-7 7 7 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="film-section" id="film" aria-labelledby="film-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">ХӨДӨЛГӨӨНТ ДҮРС</p>
+          <h2 id="film-title">Агшны цаана</h2>
+        </div>
+        <p class="section-note">Бичлэгийн тайлбар, гаднын медиа холбоосыг эндээс үзнэ.</p>
+      </div>
+      <div class="media-grid">
+        <figure class="media-panel">
+          <video controls preload="metadata" playsinline poster="img/photo4.jpg">
+            <source src="video/clip.webm" type="video/webm">
+            <source src="video/clip.mp4" type="video/mp4">
+            <track kind="captions" src="video/clip.mn.vtt" srclang="mn" label="Монгол тайлбар" default>
+            Таны хөтөч video элементийг дэмжихгүй байна. <a href="video/clip.mp4">Бичлэг татах</a>.
+          </video>
+          <figcaption>Гал тогооны нам гүм агшин <span>·</span> Монгол хадмалтай</figcaption>
+        </figure>
+        <div class="media-panel embed-panel">
+          <div class="embed-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/aqz-KE-bpKQ" title="Big Buck Bunny нээлттэй богино хэмжээний кино" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" sandbox="allow-scripts allow-same-origin allow-presentation" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p class="embed-caption">Нээлттэй богино хэмжээний кино <span>·</span> <a href="https://www.youtube.com/watch?v=aqz-KE-bpKQ" target="_blank" rel="noopener noreferrer">YouTube дээр нээх</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="#top">АГШНУУД<span class="brand-dot">.</span></a>
+    <p>Веб зохиомж <span>·</span> Лаборатори 7</p>
+    <a href="../Lab5.html">Өмнөх лаборатори <span aria-hidden="true">↗</span></a>
+  </footer>
+</body>
+</html>

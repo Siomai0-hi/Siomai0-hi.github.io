@@ -1,0 +1,39 @@
+@use "functions";
+@use "mixins";
+
+/* BEM-compatible component hooks keep the refactor readable without changing the Lab 6 markup. */
+.gallery {
+  &__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+    min-width: 0;
+
+    @include mixins.respond(tablet) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @include mixins.respond(desktop) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  &__card {
+    min-width: 0;
+  }
+}
+
+.theme-toggle {
+  @include mixins.flex-center;
+}
+
+.button--centered {
+  @include mixins.flex-center;
+  color: functions.contrast(#285b4c);
+}
+
+@each $name, $size in (small: 0.75rem, medium: 1rem, large: 1.25rem) {
+  .u-gap-#{$name} {
+    gap: $size;
+  }
+}

@@ -1,8 +1,8 @@
 :root {
-  --text: #222;
-  --line: #0adb3b;
-  --blue: #0d4f07;
-  --background: #000000;
+  --text: #202d29;
+  --line: #d8d8ce;
+  --blue: #fff;
+  --background: #fff;
 }
 
 * {
@@ -23,8 +23,9 @@ body.page-white {
 
 .site-header {
   padding: 1rem max(1rem, calc((100% - 720px) / 2));
-  color: #676a6b;
+  color: var(--text);
   background: var(--blue);
+  border-bottom: 1px solid var(--line);
 }
 
 .page-title {
@@ -41,7 +42,7 @@ body.page-white {
 }
 
 .main-nav a {
-  color: #fff;
+  color: var(--text);
 }
 
 .main-layout {
@@ -52,7 +53,7 @@ body.page-white {
 
 .content-panel {
   padding: 1rem;
-  background: #fff;
+  background: var(--background);
   border: 1px solid var(--line);
   border-radius: 4px;
 }
@@ -123,8 +124,8 @@ body.page-white {
   margin-right: .35rem;
   padding: .5rem .8rem;
   color: #fff;
-  background: var(--blue);
-  border: 1px solid var(--blue);
+  background: var(--text);
+  border: 1px solid var(--text);
   border-radius: 4px;
   font: inherit;
 }

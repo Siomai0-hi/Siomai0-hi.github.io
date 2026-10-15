@@ -1,0 +1,82 @@
+$colors: (
+  page: #f5f4ed,
+  surface: #fffefa,
+  surface-raised: #eeece2,
+  ink: #202d29,
+  muted: #66716b,
+  line: #d8d8ce,
+  forest: #285b4c,
+  forest-deep: #183f35,
+  accent: #c56143,
+  accent-soft: #f0d5c3,
+  focus: #a84328
+);
+
+$dark-colors: (
+  page: #17231f,
+  surface: #202e29,
+  surface-raised: #2a3933,
+  ink: #f3f0e7,
+  muted: #b2beb6,
+  line: #405149,
+  forest: #a8d0b9,
+  forest-deep: #d7eadd,
+  accent: #f0a17f,
+  accent-soft: #49382f,
+  focus: #ffd1a2
+);
+
+$radius: (
+  card: 4px,
+  control: 50%
+);
+
+$breakpoints: (
+  tablet: 560px,
+  desktop: 900px
+);
+
+$motion: (
+  fast: 160ms,
+  base: 220ms,
+  flip: 620ms,
+  loader: 800ms,
+  entry: 580ms,
+  stagger: 75ms,
+  zoom: 550ms,
+  reduced: 0.01ms
+);
+
+:root {
+  color-scheme: light;
+  @each $name, $value in $colors {
+    --#{$name}: #{$value};
+  }
+
+  @each $name, $value in $radius {
+    --radius-#{$name}: #{$value};
+  }
+
+  @each $name, $value in $motion {
+    --duration-#{$name}: #{$value};
+  }
+
+  --photo-overlay: linear-gradient(180deg, transparent 42%, rgb(15 25 22 / 78%) 100%);
+  --hero-tint: rgb(197 97 67 / 9%);
+  --photo-text: #fff;
+  --photo-control-border: rgb(255 255 255 / 68%);
+  --photo-control-bg: rgb(20 35 30 / 68%);
+  --media-fallback: #111;
+  --shadow-card: 0 10px 26px rgb(24 43 36 / 14%);
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  @each $name, $value in $dark-colors {
+    --#{$name}: #{$value};
+  }
+
+  --photo-overlay: linear-gradient(180deg, transparent 40%, rgb(8 14 12 / 84%) 100%);
+  --hero-tint: rgb(240 161 127 / 10%);
+  --shadow-card: 0 10px 26px rgb(0 0 0 / 30%);
+}
