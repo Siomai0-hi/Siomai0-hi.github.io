@@ -5,9 +5,13 @@
   "scripts": {
     "build": "npm run build:lab7",
     "build:lab7": "sass lab7/scss/main.scss lab7/style.css --style=compressed --no-source-map",
-    "watch:lab7": "sass --watch lab7/scss/main.scss:lab7/style.css"
+    "watch:lab7": "sass --watch lab7/scss/main.scss:lab7/style.css",
+    "build:lab8": "npm run build:lab8:tailwind",
+    "build:lab8:tailwind": "tailwindcss -i ./lab8/tailwind/input.css -o ./lab8/tailwind/style.css --minify",
+    "watch:lab8:tailwind": "tailwindcss -i ./lab8/tailwind/input.css -o ./lab8/tailwind/style.css --watch"
   },
   "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
     "sass": "^1.80.0"
   }
 }

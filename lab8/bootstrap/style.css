@@ -1,0 +1,7 @@
+:root { --brand: #285b4c; --brand-soft: #dcebe3; }
+.text-brand { color: var(--brand); }
+.btn-brand { --bs-btn-color: #fff; --bs-btn-bg: var(--brand); --bs-btn-border-color: var(--brand); --bs-btn-hover-color: #fff; --bs-btn-hover-bg: #183f35; --bs-btn-hover-border-color: #183f35; }
+.eyebrow { color: #c56143; font-size: .72rem; font-weight: 700; letter-spacing: .14em; }
+.gallery-image { height: 260px; object-fit: cover; }
+em { color: var(--brand); }
+@media (min-width: 992px) { .py-lg-6 { padding-block: 6rem !important; } }

@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  --colorbrand: #285b4c;
+  --color-brand: var(--colorbrand);
+  --color-brand-deep: #183f35;
+  --color-brand-accent: #c56143;
+}
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+@layer base {
+  body { font-family: "DM Sans", ui-sans-serif, system-ui, sans-serif; }
+  h1, h2, h3 { font-family: Georgia, serif; }
+}
+
+@layer components {
+  .tw-eyebrow { @apply text-xs font-bold tracking-[.14em] text-brand-accent; }
+  .tw-button { @apply inline-flex items-center rounded-full bg-brand px-5 py-2.5 text-sm font-bold text-white transition hover:bg-brand-deep focus:outline-2 focus:outline-offset-2 focus:outline-brand; }
+  .tw-card { @apply overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-slate-700 dark:bg-slate-800; }
+}
