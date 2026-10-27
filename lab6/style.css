@@ -700,6 +700,10 @@ html[data-theme="dark"] .theme-icon {
     transform: translateY(-4px);
   }
 
+  .flip-card--top:hover .card-inner {
+    transform: translateY(-4px) rotateY(180deg);
+  }
+
   .flip-card.is-flipped:hover .card-inner {
     transform: translateY(-4px) rotateY(180deg);
   }

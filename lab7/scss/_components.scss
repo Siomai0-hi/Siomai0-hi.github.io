@@ -1,7 +1,7 @@
-@use "functions";
 @use "mixins";
+@use "functions";
 
-/* BEM-compatible component hooks keep the refactor readable without changing the Lab 6 markup. */
+/* BEM component styles keep the gallery layout separate from the visual baseline. */
 .gallery {
   &__grid {
     display: grid;
@@ -20,6 +20,8 @@
 
   &__card {
     min-width: 0;
+    aspect-ratio: 4 / 3;
+    perspective: 1100px;
   }
 }
 
